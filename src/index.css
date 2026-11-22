@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --vc-bg-deep: #0B0618;
+    --vc-bg-surface: #140C2B;
+    --vc-bg-elevated: #1D123D;
+    --vc-blue: #3B82F6;
+    --vc-electric: #38BDF8;
+    --vc-gold: #F59E0B;
+    --vc-gold-light: #FDE68A;
+  }
+
+  html, body {
+    background-color: #000000;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior-y: contain;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+@layer components {
+  /* --- Luxury Relief, Golden Borders, Glass & Specular Reflections --- */
+  .vc-card-relief {
+    background: linear-gradient(160deg, rgba(33, 18, 72, 0.94) 0%, rgba(19, 11, 42, 0.96) 55%, rgba(12, 7, 28, 0.98) 100%);
+    border: 1.5px solid rgba(245, 158, 11, 0.48);
+    box-shadow:
+      inset 0 1px 0 rgba(254, 240, 138, 0.32),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.5),
+      0 14px 32px -10px rgba(3, 1, 12, 0.88),
+      0 0 22px -8px rgba(245, 158, 11, 0.25);
+  }
+
+  .vc-card-hero {
+    background:
+      radial-gradient(120% 90% at 12% 0%, rgba(124, 58, 237, 0.38) 0%, transparent 55%),
+      radial-gradient(90% 80% at 92% 10%, rgba(56, 189, 248, 0.24) 0%, transparent 52%),
+      radial-gradient(70% 60% at 50% 100%, rgba(245, 158, 11, 0.18) 0%, transparent 60%),
+      linear-gradient(155deg, #251354 0%, #150B33 52%, #0C1028 100%);
+    border: 1.5px solid rgba(251, 191, 36, 0.62);
+    box-shadow:
+      inset 0 1px 1px rgba(254, 243, 199, 0.4),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.58),
+      0 20px 45px -12px rgba(2, 1, 10, 0.92),
+      0 0 34px -6px rgba(245, 158, 11, 0.32);
+  }
+
+  .vc-inset-well {
+    background: linear-gradient(180deg, rgba(6, 3, 16, 0.92) 0%, rgba(13, 7, 30, 0.88) 100%);
+    border: 1px solid rgba(251, 191, 36, 0.28);
+    box-shadow:
+      inset 0 3px 8px rgba(0, 0, 0, 0.78),
+      inset 0 -1px 0 rgba(253, 230, 138, 0.14);
+  }
+
+  .vc-icon-medallion {
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.35),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.45),
+      0 6px 14px -4px rgba(0, 0, 0, 0.6);
+  }
+
+  .vc-btn-gold {
+    background: linear-gradient(180deg, #FDE047 0%, #F59E0B 58%, #D97706 100%);
+    color: #0F0720;
+    border: 1px solid rgba(254, 240, 138, 0.7);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.7),
+      0 4px 0 #92400E,
+      0 10px 24px -4px rgba(245, 158, 11, 0.45);
+    transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  }
+
+  .vc-btn-gold:hover:not(:disabled) {
+    filter: brightness(1.06);
+  }
+
+  .vc-btn-gold:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.5),
+      0 2px 0 #92400E,
+      0 6px 16px -4px rgba(245, 158, 11, 0.38);
+  }
+
+  .vc-btn-electric {
+    background: linear-gradient(180deg, #38BDF8 0%, #2563EB 58%, #4338CA 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(125, 211, 252, 0.55);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.5),
+      0 4px 0 #1E3A8A,
+      0 10px 26px -4px rgba(37, 99, 235, 0.48);
+    transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  }
+
+  .vc-btn-electric:hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  .vc-btn-electric:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.35),
+      0 2px 0 #1E3A8A,
+      0 6px 16px -4px rgba(37, 99, 235, 0.4);
+  }
+
+  .vc-glass-chrome {
+    background: linear-gradient(180deg, rgba(16, 9, 38, 0.88) 0%, rgba(11, 6, 24, 0.94) 100%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+      inset 0 1px 0 rgba(254, 240, 138, 0.16),
+      0 10px 30px rgba(0, 0, 0, 0.55);
+  }
+
+  .vc-reel-drum {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 3, 16, 0.95) 0%,
+      rgba(30, 17, 68, 0.95) 26%,
+      rgba(42, 24, 92, 0.98) 50%,
+      rgba(30, 17, 68, 0.95) 74%,
+      rgba(6, 3, 16, 0.95) 100%
+    );
+    box-shadow:
+      inset 0 10px 16px rgba(0, 0, 0, 0.78),
+      inset 0 -10px 16px rgba(0, 0, 0, 0.78),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  .vc-ball-gold {
+    background: radial-gradient(circle at 32% 28%, #FEF9C3 0%, #FBBF24 42%, #B45309 100%);
+    color: #140826;
+    box-shadow:
+      inset -2px -3px 6px rgba(120, 53, 15, 0.65),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.75),
+      0 6px 14px rgba(245, 158, 11, 0.35);
+  }
+
+  .vc-ball-sky {
+    background: radial-gradient(circle at 32% 28%, #E0F2FE 0%, #38BDF8 42%, #1D4ED8 100%);
+    color: #FFFFFF;
+    box-shadow:
+      inset -2px -3px 6px rgba(30, 58, 138, 0.75),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.7),
+      0 6px 14px rgba(56, 189, 248, 0.4);
+  }
+
+  .vc-gloss-overlay {
+    background: linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.03) 28%,
+      transparent 45%
+    );
+  }
+}
+
+@keyframes coinSpin3D {
+  0% {
+    transform: perspective(900px) rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: perspective(900px) rotateY(180deg) scale(1.04);
+  }
+  100% {
+    transform: perspective(900px) rotateY(360deg) scale(1);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+@keyframes logoGlintSweep {
+  0% {
+    background-position: 180% 0;
+  }
+  100% {
+    background-position: -80% 0;
+  }
+}
+
+.animate-coin-spin {
+  animation: coinSpin3D var(--coin-spin-duration, 3.2s) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmerSweep 2.6s ease-in-out infinite;
+}
+
+.animate-logo-glint {
+  animation: logoGlintSweep 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-coin-spin,
+  .animate-shimmer,
+  .animate-logo-glint {
+    animation: none !important;
+  }
+}
